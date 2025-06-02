@@ -6,7 +6,6 @@ export class CrewModule {
         this.crewMembersEl = document.getElementById('crew-members');
         this.upcomingEventsEl = document.getElementById('upcoming-events');
     }
-
     initialize() {
         // Load mock data for demonstration
         this.loadMockData();

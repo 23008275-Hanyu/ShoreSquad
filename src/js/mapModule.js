@@ -5,7 +5,6 @@ export class MapModule {
         this.markers = [];
         this.cleanupEvents = [];
     }
-
     initialize() {
         // Set up the initMap function in the global scope
         window.initMap = () => {

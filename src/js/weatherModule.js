@@ -7,7 +7,8 @@ export class WeatherModule {
         this.forecastEl = document.getElementById('weather-forecast');
         this.BASE_URL = 'https://api.data.gov.sg/v1/environment';
     }
-
+    
+    
     async initialize() {
         try {
             await Promise.all([

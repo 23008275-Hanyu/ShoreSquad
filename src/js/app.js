@@ -9,7 +9,6 @@ class ShoreSquadApp {
         this.crew = new CrewModule();
         this.userLocation = null;
     }
-
     async initialize() {
         await this.initializeGeolocation();
         this.map.initialize();
