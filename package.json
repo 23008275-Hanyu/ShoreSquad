@@ -1,0 +1,26 @@
+{
+  "name": "shoresquad",
+  "version": "1.0.0",
+  "description": "Rally your crew and hit the next beach cleanup with our dope map app!",
+  "main": "src/js/app.js",
+  "scripts": {
+    "start": "live-server src --port=3000 --no-browser",
+    "dev": "live-server src --port=3000"
+  },
+  "keywords": [
+    "beach-cleanup",
+    "environmental",
+    "community",
+    "maps",
+    "weather"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^2.30.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "dotenv": "^16.3.1"
+  }
+}

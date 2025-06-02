@@ -1,0 +1,359 @@
+:root {
+    /* Coastal color palette */
+    --ocean-blue: #1a96cc;
+    --sand-beige: #f5e6ca;
+    --coral-accent: #ff7f50;
+    --seafoam-green: #98ddca;
+    --deep-navy: #003366;
+    --white-wash: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--deep-navy);
+    background-color: var(--white-wash);
+}
+
+.main-header {
+    background-color: var(--ocean-blue);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--white-wash);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--white-wash);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--sand-beige);
+}
+
+main {
+    margin-top: 4rem;
+}
+
+#hero {
+    background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)),
+                url('../assets/beach-hero.jpg') center/cover;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white-wash);
+    padding: 2rem;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Component Containers */
+.map-container {
+    height: 60vh;
+    min-height: 400px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#map-element {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f5f5f5;
+}
+
+.cleanup-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.weather-container {
+    background-color: var(--white-wash);
+    padding: 2rem;
+}
+
+.weather-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.crew-container {
+    background-color: var(--sand-beige);
+    padding: 2rem;
+}
+
+.crew-dashboard {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--coral-accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Weather Elements */
+#current-weather {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--sand-beige);
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.weather-item {
+    text-align: center;
+    padding: 1rem;
+    background: var(--white-wash);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.weather-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.weather-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--deep-navy);
+    margin-bottom: 0.25rem;
+}
+
+.weather-label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+#weather-forecast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.forecast-day {
+    background: var(--white-wash);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.forecast-day:hover {
+    transform: translateY(-2px);
+}
+
+.forecast-date {
+    font-weight: 600;
+    color: var(--deep-navy);
+    margin-bottom: 0.5rem;
+}
+
+.forecast-icon {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+}
+
+.forecast-temp {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--deep-navy);
+    margin: 0.5rem 0;
+}
+
+.forecast-desc {
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+.forecast-wind {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.weather-error {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+/* Crew Elements */
+#crew-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#upcoming-events {
+    border-top: 1px solid var(--sand-beige);
+    padding-top: 1.5rem;
+}
+
+/* Cleanup Info Card */
+.cleanup-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    max-width: 300px;
+}
+
+.cleanup-card {
+    color: var(--deep-navy);
+}
+
+.cleanup-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--coral-accent);
+}
+
+.cleanup-card p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .weather-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #weather-forecast {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .weather-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+:focus {
+    outline: 3px solid var(--coral-accent);
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (forced-colors: active) {
+    .main-header {
+        border-bottom: 2px solid ButtonText;
+    }
+}
+
+/* Map info window styling */
+.map-info-window {
+    padding: 0.5rem;
+    max-width: 200px;
+}
+
+.map-info-window h3 {
+    color: var(--coral-accent);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.map-info-window p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
